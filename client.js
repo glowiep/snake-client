@@ -11,8 +11,16 @@ const connect = function() {
     console.log("Successfully connected to game server");
   })
 
+  //const directions = ["Move: up", "Move: down", "Move: left", "Move: right"];
   conn.on("connect", () => {
-    conn.write("Name: GLO")
+    conn.write("Name: GLO");
+    // setTimeout(() => {
+    //   conn.write("Move: up");
+    // }, 2000) 
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 1000) 
+    
   })
 
   conn.on("data", () => {
