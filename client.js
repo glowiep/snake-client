@@ -6,10 +6,19 @@ const connect = function() {
     host: "localhost",
     port: 50541
   });
+  
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server");
+  })
+
+  conn.on("connect", () => {
+    conn.write("Name: GLO")
+  })
 
   conn.on("data", () => {
     console.log("you ded cuz you idled");
   })
+
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
