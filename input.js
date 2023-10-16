@@ -6,6 +6,7 @@ let connection;
 // setup interface to handle user input from stdin
 const setupInput = function(conn) {
   connection = conn;
+  
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -17,16 +18,14 @@ const setupInput = function(conn) {
       process.exit();
     }
 
-    // Send the string "Move: up" as data to the server via the conn object.
+    // Send the string "Move: __" as data to the server via the conn object.
     for (let key in MOVE_KEY) {
       if (connection === key) {
-        setTimeout(() => {
-          conn.write(MOVE_KEY[key]);
-        });
+        conn.write(MOVE_KEY[key]);
       }
     }
     
-    // Canned messages
+    // Logic for canned messages
     for (let message in CANNED_MESSAGES) {
       if (connection === message) {
         setTimeout(() => {
