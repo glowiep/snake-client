@@ -1,10 +1,6 @@
 // Stores the active TCP connection object.
 let connection;
 
-// const setupInput = (conn) => {
-//   connection = conn;
-// };
-
 // setup interface to handle user input from stdin
 const setupInput = function(conn) {
   connection = conn;
@@ -40,6 +36,25 @@ const setupInput = function(conn) {
     if (connection === 'd') {
       setTimeout(() => {
         conn.write("Move: right");
+      }, 1000);
+    }
+    
+    // Add canned messages
+    if (connection === 'm') {
+      setTimeout(() => {
+        conn.write("Say: How are you?");
+      }, 1000);
+    }
+
+    if (connection === ',') {
+      setTimeout(() => {
+        conn.write("Say: I'm winning!");
+      }, 1000);
+    }
+
+    if (connection === 'n') {
+      setTimeout(() => {
+        conn.write("Say: You're winning!");
       }, 1000);
     }
   };
