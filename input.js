@@ -1,3 +1,5 @@
+const {CANNED_MESSAGES, MOVE_KEY} = require("./constants");
+
 // Stores the active TCP connection object.
 let connection;
 
@@ -11,51 +13,26 @@ const setupInput = function(conn) {
 
   const handleUserInput = function(connection) {
     if (connection === '\u0003') {
+      console.log("Thank you for playing!")
       process.exit();
     }
 
     // Send the string "Move: up" as data to the server via the conn object.
-    if (connection === 'w') {
-      setTimeout(() => {
-        conn.write("Move: up");
-      }, 1000);
-    }
-
-    if (connection === 'a') {
-      setTimeout(() => {
-        conn.write("Move: left");
-      }, 1000);
-    }
-
-    if (connection === 's') {
-      setTimeout(() => {
-        conn.write("Move: down");
-      }, 1000);
-    }
-
-    if (connection === 'd') {
-      setTimeout(() => {
-        conn.write("Move: right");
-      }, 1000);
+    for (let key in MOVE_KEY) {
+      if (connection === key) {
+        setTimeout(() => {
+          conn.write(MOVE_KEY[key]);
+        });
+      }
     }
     
-    // Add canned messages
-    if (connection === 'm') {
-      setTimeout(() => {
-        conn.write("Say: How are you?");
-      }, 1000);
-    }
-
-    if (connection === ',') {
-      setTimeout(() => {
-        conn.write("Say: I'm winning!");
-      }, 1000);
-    }
-
-    if (connection === 'n') {
-      setTimeout(() => {
-        conn.write("Say: You're winning!");
-      }, 1000);
+    // Canned messages
+    for (let message in CANNED_MESSAGES) {
+      if (connection === message) {
+        setTimeout(() => {
+          conn.write(CANNED_MESSAGES[message]);
+        }, 1000);
+      }
     }
   };
   
