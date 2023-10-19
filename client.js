@@ -1,13 +1,14 @@
 const net = require("net");
 const {IP, PORT, CONNECT_MSG, EXIT_MSG, USERNAME} = require("./constants");
 
-// establishes a connection with the game server
+// Establishes a connection with the game server
 const connect = function() {
   const conn = net.createConnection({
     host: IP,
     port: PORT
   });
   
+  // Display pre-defined user initials upon connect
   conn.on("connect", () => {
     console.log(CONNECT_MSG);
     conn.write(`Name: ${USERNAME}`);
@@ -18,7 +19,6 @@ const connect = function() {
     process.exit();
   });
 
-  // interpret incoming data as text
   conn.setEncoding("utf8");
 
   return conn;

@@ -3,7 +3,7 @@ const {CANNED_MSG, MOVE_KEY} = require("./constants");
 // Stores the active TCP connection object.
 let connection;
 
-// setup interface to handle user input from stdin
+// Setup interface to handle user input from stdin
 const setupInput = function(conn) {
   connection = conn;
   
@@ -12,9 +12,10 @@ const setupInput = function(conn) {
   stdin.setEncoding("utf8");
   stdin.resume();
 
+  // If the user exists with ctrl + c
   const handleUserInput = function(connection) {
     if (connection === '\u0003') {
-      console.log("Thank you for playing!")
+      console.log("Thank you for playing!");
       process.exit();
     }
 
