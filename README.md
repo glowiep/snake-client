@@ -12,7 +12,11 @@ Before you can run this client, you will need to be running the server side whic
 
 
 ### Controls
-You have options! Use the <b>Arrow keys</b> or <b>wsad</b> keys to navigate Up, Down, Left, Right.
+You have options! Use the <b>Arrow keys</b> or <b>wsad</b> keys to navigate:
+- <b>"w"</b> : Up
+- <b>"s"</b> : Down
+- <b>"a"</b> : Left
+- <b>"d"</b> : Right
 
 ### Special Keys
 These are the special keys to send canned messages on the server:
