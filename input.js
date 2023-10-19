@@ -21,7 +21,7 @@ const setupInput = function(conn) {
     // Send the string "Move: __" as data to the server via the conn object.
     for (let key in MOVE_KEY) {
       if (connection === key) {
-        conn.write(MOVE_KEY[key]);
+        conn.write(`Move: ${MOVE_KEY[key]}`);
       }
     }
     
@@ -29,7 +29,7 @@ const setupInput = function(conn) {
     for (let message in CANNED_MSG) {
       if (connection === message) {
         setTimeout(() => {
-          conn.write(CANNED_MSG[message]);
+          conn.write(`Say: ${CANNED_MSG[message]}`);
         }, 1000);
       }
     }

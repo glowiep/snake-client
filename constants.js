@@ -7,21 +7,21 @@ const EXIT_MSG = "you ded cuz you idled";
 const USERNAME = "GL";
 
 const CANNED_MSG = {
-  m: "Say: How are you?",
-  "," : "Say: I'm winning!",
-  n: "Say: You're winning!",
-  k: "Say: This is fun!"
+  m: "How are you?",
+  "," : "I'm winning!",
+  n: "You're winning!",
+  k: "This is fun!"
 };
 
 const MOVE_KEY = {
-  w: "Move: up",
-  a: "Move: left",
-  s: "Move: down",
-  d: "Move: right",
-  '\u001B\u005B\u0041': "Move: up",
-  '\u001B\u005B\u0044': "Move: left",
-  '\u001B\u005B\u0042': "Move: down",
-  '\u001B\u005B\u0043':"Move: right"
+  w: "up",
+  a: "left",
+  s: "down",
+  d: "right",
+  '\u001B\u005B\u0041': "up",
+  '\u001B\u005B\u0044': "left",
+  '\u001B\u005B\u0042': "down",
+  '\u001B\u005B\u0043':"right"
 };
 
 module.exports = {
