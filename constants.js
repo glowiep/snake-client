@@ -9,7 +9,8 @@ const USERNAME = "GL";
 const CANNED_MSG = {
   m: "Say: How are you?",
   "," : "Say: I'm winning!",
-  n: "Say: You're winning!"
+  n: "Say: You're winning!",
+  k: "Say: This is fun!"
 };
 
 const MOVE_KEY = {

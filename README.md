@@ -21,6 +21,7 @@ You have options! Use the <b>Arrow keys</b> or <b>wsad</b> keys to navigate:
 ### Special Keys
 These are the special keys to send canned messages on the server:
 - <b>"m"</b> : How are you?
+- <b>"k"</b> : This is fun!
 - <b>"n"</b> : You're winning!
 - <b>","</b> : I'm winning!
 
