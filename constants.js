@@ -1,12 +1,12 @@
 const IP = "localhost";
 const PORT = 50541;
 
-const CONNECT_MESSAGE = "Successfully connected to game server";
-const EXIT_MESSAGE = "you ded cuz you idled"
+const CONNECT_MSG = "Successfully connected to game server";
+const EXIT_MSG = "you ded cuz you idled"
 
 const USERNAME = "GL"
 
-const CANNED_MESSAGES = {
+const CANNED_MSG = {
   m: "Say: How are you?",
   "," : "Say: I'm winning!",
   n: "Say: You're winning!"
@@ -26,9 +26,9 @@ const MOVE_KEY = {
 module.exports = {
   IP,
   PORT,
-  CONNECT_MESSAGE,
-  EXIT_MESSAGE,
+  CONNECT_MSG,
+  EXIT_MSG,
   USERNAME,
-  CANNED_MESSAGES,
+  CANNED_MSG,
   MOVE_KEY
 };

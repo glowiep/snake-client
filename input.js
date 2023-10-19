@@ -1,4 +1,4 @@
-const {CANNED_MESSAGES, MOVE_KEY} = require("./constants");
+const {CANNED_MSG, MOVE_KEY} = require("./constants");
 
 // Stores the active TCP connection object.
 let connection;
@@ -26,10 +26,10 @@ const setupInput = function(conn) {
     }
     
     // Logic for canned messages
-    for (let message in CANNED_MESSAGES) {
+    for (let message in CANNED_MSG) {
       if (connection === message) {
         setTimeout(() => {
-          conn.write(CANNED_MESSAGES[message]);
+          conn.write(CANNED_MSG[message]);
         }, 1000);
       }
     }
