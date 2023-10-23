@@ -13,26 +13,22 @@ const setupInput = function(conn) {
   stdin.resume();
 
   // If the user exists with ctrl + c
-  const handleUserInput = function(connection) {
-    if (connection === '\u0003') {
+  const handleUserInput = function(inputKey) {
+    if (inputKey === '\u0003') {
       console.log("Thank you for playing!");
       process.exit();
     }
 
     // Send the string "Move: __" as data to the server via the conn object.
-    for (let key in MOVE_KEY) {
-      if (connection === key) {
-        conn.write(`Move: ${MOVE_KEY[key]}`);
-      }
+    if (MOVE_KEY[inputKey]) {
+      conn.write(`Move: ${MOVE_KEY[inputKey]}`);
     }
     
     // Logic for canned messages
-    for (let message in CANNED_MSG) {
-      if (connection === message) {
-        setTimeout(() => {
-          conn.write(`Say: ${CANNED_MSG[message]}`);
-        }, 1000);
-      }
+    if (CANNED_MSG[inputKey]) {
+      setTimeout(() => {
+        conn.write(`Say: ${CANNED_MSG[inputKey]}`);
+      }, 1000);
     }
   };
   
